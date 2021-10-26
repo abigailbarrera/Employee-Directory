@@ -1,0 +1,54 @@
+{
+  "employees": [
+    {
+      "first_name": "Sebas",
+      "last_name": "Eschweiler",
+      "title": "Developer",
+      "email": "sebastian@codingthesmartway.com",
+      "id": 1,
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "first_name": "Bill",
+      "last_name": "Murray",
+      "email": "bill@codingthesmartway.com",
+      "title": "Product Manager",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "first_name": "Sarah",
+      "last_name": "Miller",
+      "email": "sarah@codingthesmartway.com",
+      "title": "Content Writer",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "first_name": "Dave",
+      "last_name": "Jones",
+      "email": "dave@codingthesmartway.com",
+      "title": "VP of Marketing",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg"
+      }
+    },
+    {
+      "first_name": "Linda",
+      "last_name": "Miller",
+      "title": "developer",
+      "email": "linda@gmail.com",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg"
+      },
+      "id": 7
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import EmployeeModal from './EmployeeModal';
 import EditEmployee from './EditEmployee';
 import AddEmployee from './AddEmployee';
 import AddEmployeeModal from './AddEmployeeModal';
-import { getEmployees } from '../Requests';
+import { getEmployees, addRandomEmployees, addEmployee } from '../Requests';
 
 const Container = styled.div`
   background-color: white;
@@ -33,6 +33,7 @@ const List = styled.ul`
 
 const Employees = () => {
 	const [employees, setEmployees] = useState({});
+	const [randomEmployees, setRandomEmployees] = useState([]);
 	const [modalOpen, setModalOpen] = useState(false);
 	const [editModal, setEditModal] = useState(false);
 	const [addEmployeeModal, setAddEmployeeModal] = useState(false);
@@ -42,10 +43,46 @@ const Employees = () => {
     const getData = async () => {
       await getEmployees().then((response) => {
 				setEmployees(response);
-			})
-    }
+			});
+    };
     getData();
   }, [employees]);
+
+	useEffect(() => {
+    const getRandomUsers = async () => {
+      await addRandomEmployees().then((response) => {
+				setRandomEmployees(response);
+			});
+    };
+    getRandomUsers();
+  }, []);
+
+	useEffect(() => {
+    const addRandomUsers = async (firstName, lastName, title, email, picture) => {
+			await addEmployee(
+        firstName, 
+        lastName,
+        title,
+        email,
+        picture
+				).then((response) => {
+				console.log(response);
+			});
+    }
+
+		if (randomEmployees.length > 0) {
+			for (let i = 0; i < randomEmployees.length; i++) {
+				const employee = randomEmployees[i];
+				addRandomUsers(
+					employee.name.first,
+					employee.name.last,
+					"developer",
+					employee.email,
+					employee.picture.large
+				);
+			};
+		};
+	}, [randomEmployees])
 
 	return (
 		<Container>

@@ -47,9 +47,18 @@ const addEmployee = async (firstName, lastName, title, email, picture) => {
 	});
 };
 
+const addRandomEmployees = async () => {
+	return await axios.get(`https://randomuser.me/api/?results=5`)
+	.then((response) => response.data.results)
+	.catch(() => {
+		alert("Error: Please try addEmployees again or contact support for additional help")
+	});
+};
+
 export {
 	getEmployees,
 	updateEmployee,
 	deleteEmployee,
-	addEmployee
+	addEmployee,
+	addRandomEmployees
 }
